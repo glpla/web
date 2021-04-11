@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed | Cnplaman</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "montserrat", sans-serif;
+    }
+
+    body {
+      background: #111;
+    }
+
+    header {
+      position: fixed;
+      left: 0;
+      top: 0;
+      box-sizing: border-box;
+      width: 100%;
+      background-color: #111;
+      padding: 40px 100px;
+      display: flex;
+      align-items: center;
+      z-index: 99;
+      transition: .4s;
+    }
+
+    header.hover {
+      padding: 5px 100px;
+      background-color: #fff;
+    }
+
+    header.hover a {
+      color: #1118;
+    }
+
+    header.hover a:hover {
+      color: #111f;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff8;
+      display: inline-block;
+      margin: 0 10px;
+      text-transform: uppercase;
+      transition: .4s;
+    }
+
+    a:hover {
+      color: #ffff;
+    }
+
+    a.logo {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    div.cont {
+      max-width: 800px;
+      margin: 0 auto;
+      padding-top: 110px;
+      height: 200vh;
+      color: #fff;
+      text-align: justify;
+    }
+
+    div.cont p {
+      margin-bottom: 10px;
+      text-indent: 2em;
+    }
+
+    @media screen and (max-width:968px) {
+      header {
+        padding: 20px 0;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      ul {
+        width: 100%;
+        flex-direction: column;
+        margin: 10px auto;
+      }
+
+      ul li {
+        width: 100%;
+        text-align: center;
+        line-height: 2;
+        border-bottom: 1px dotted #333;
+      }
+
+      div.cont {
+        min-width: 375px;
+        padding: 340px 20px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="javascript:;" class="logo">cnplaman</a>
+    <ul>
+      <li><a href="javascript:;">home</a></li>
+      <li><a href="javascript:;">product</a></li>
+      <li><a href="javascript:;">download</a></li>
+      <li><a href="javascript:;">forum</a></li>
+      <li><a href="javascript:;">cooper</a></li>
+      <li><a href="javascript:;">contact</a></li>
+    </ul>
+  </header>
+
+  <div class="cont">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint ad sit voluptates sed magnam quis iusto vel
+      odit repellat quidem ducimus tempora quibusdam dolorem nemo recusandae necessitatibus ab dolorum similique
+      consectetur nihil, debitis dicta quisquam? Delectus quia illo, ratione dignissimos ipsam molestiae laborum. Esse
+      voluptates, provident modi delectus accusantium, ipsam ratione molestias tempore quo consectetur tempora magnam
+      enim
+      minus. Dolor quia velit earum corporis enim vel soluta labore distinctio veritatis assumenda consequuntur sed
+      amet,
+      aut, blanditiis nulla, cum autem deserunt animi hic ex optio! Enim, culpa architecto voluptatibus praesentium
+      ullam
+      iure tempore hic sapiente natus, quisquam optio eligendi reiciendis. Nihil?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint ad sit voluptates sed magnam quis iusto vel
+      odit repellat quidem ducimus tempora quibusdam dolorem nemo recusandae necessitatibus ab dolorum similique
+      consectetur nihil, debitis dicta quisquam? Delectus quia illo, ratione dignissimos ipsam molestiae laborum. Esse
+      voluptates, provident modi delectus accusantium, ipsam ratione molestias tempore quo consectetur tempora magnam
+      enim
+      minus. Dolor quia velit earum corporis enim vel soluta labore distinctio veritatis assumenda consequuntur sed
+      amet,
+      aut, blanditiis nulla, cum autem deserunt animi hic ex optio! Enim, culpa architecto voluptatibus praesentium
+      ullam
+      iure tempore hic sapiente natus, quisquam optio eligendi reiciendis. Nihil?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint ad sit voluptates sed magnam quis iusto vel
+      odit repellat quidem ducimus tempora quibusdam dolorem nemo recusandae necessitatibus ab dolorum similique
+      consectetur nihil, debitis dicta quisquam? Delectus quia illo, ratione dignissimos ipsam molestiae laborum. Esse
+      voluptates, provident modi delectus accusantium, ipsam ratione molestias tempore quo consectetur tempora magnam
+      enim
+      minus. Dolor quia velit earum corporis enim vel soluta labore distinctio veritatis assumenda consequuntur sed
+      amet,
+      aut, blanditiis nulla, cum autem deserunt animi hic ex optio! Enim, culpa architecto voluptatibus praesentium
+      ullam
+      iure tempore hic sapiente natus, quisquam optio eligendi reiciendis. Nihil?</p>
+  </div>
+  <script>
+    window.addEventListener("scroll", function () {
+      let hd = document.querySelector("header");
+      hd.classList.toggle("hover", window.scrollY > 0);
+    })
+  </script>
+</body>
+
+</html>

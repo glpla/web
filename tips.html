@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tips</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        body {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #f3f4f5;
+        }
+
+        .box {
+            margin-bottom: 20px;
+        }
+
+        .weight {
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>@media</h1>
+    <div class="box"></div>
+    <h1>grid</h1>
+    <div class="box"></div>
+    <h1>transform</h1>
+    <div class="box">
+        <p>translate</p>
+        <p>scale</p>
+        <p>skew</p>
+        <p>transform-style: preserve-3d;</p>
+    </div>
+    <h1>CSS函数</h1>
+    <div class="box">
+        <p>attr(attribute-name)</p>
+        <p>calc()</p>
+        <p>linear-gradient(direction, color-stop1, color-stop2, ...)</p>
+        <p>radial-gradient(shape size at position, start-color, ..., last-color)</p>
+        <p>rgb() rgba()</p>
+        <p>var()</p>
+    </div>
+    <h1>background</h1>
+    <div class="box">
+        <p>background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;</p>
+        <p>background-color</p>
+        <p>background-image</p>
+        <p>background-position</p>
+        <p>background-size</p>
+        <p>background-repeat</p>
+        <p>background-attachment</p>
+    </div>
+    <h1>animation</h1>
+    <div class="box">
+        <p>@keyframe</p>
+    </div>
+    <h1>transition</h1>
+    <div class="box">
+        <p>transition: property duration timing-function delay;</p>
+    </div>
+    <h1>filter</h1>
+    <div class="box">
+        <p>blur()</p>
+    </div>
+    <h1>box-shadow</h1>
+    <div class="box">
+        <p>box-shadow: h-shadow v-shadow [blur] [spread] [color] [inset];</p>
+        <p>一个或多个阴影,用逗号分隔</p>
+    </div>
+    <h1>img</h1>
+    <div class="box">
+        <p>object-fit: cover|contain;</p>
+        <p>background-image</p>
+        <p>background-repeat</p>
+        <p>background-position</p>
+        <p>sprite</p>
+        <p>iconfont</p>
+    </div>
+    <h1>summary</h1>
+    <div class="box">
+        <p>border</p>
+        <p>border-radius</p>
+        <p>appearance</p>
+    </div>
+    <h1>text</h1>
+    <div class="box">
+        <p>family</p>
+        <p>font</p>
+        <p>color</p>
+        <p>text-align</p>
+        <p>line-height</p>
+        <p>text-transform: lowercase | uppercase</p>
+        <p class="weight">font-weight</p>
+        <p>text-indent</p>
+        <p>text-shadow:h-shadow v-shadow blur color</p>
+        <p>first-letter</p>
+        <p>first-line</p>
+        <p>text-overflow: ellipsis; overflow: hidden; white-space: nowrap;</p>
+    </div>
+    <h1>form</h1>
+    <div class="box">
+        <p>form元素：input-&gt;:text/radio/checkbox/button/file</p>
+        <p>form元素：textarea</p>
+        <p>name value checked placeholder required hidden</p>
+    </div>
+    <h1>selector</h1>
+    <div class="box">
+        <p>css选择器：标签tag 类. id# *</p>
+        <p>css选择器：后代选择器 并列选择器</p>
+        <p>nth-child()：结构伪类选择器</p>
+        <p>nth-child(odd):偶数孩子</p>
+        <p>nth-child(even):奇数孩子</p>
+        <p>nth-child(exp):exp为n的表达式</p>
+        <p>last-child:最后一个孩子</p>
+        <p>first-child:第一个孩子</p>
+        <p class="line">first-line</p>
+        <p class="letter">first-letter</p>
+        <p>悬停选择器:hover</p>
+        <p>伪元素选择器::after ::before</p>
+        <p>目标选择器.target</p>
+        <p>焦点选择器:focus</p>
+        <p>焦点选择器:valid</p>
+        <p>选中选择器:checked</p>
+        <p>相邻兄弟选择器+：选中一个弟弟0</p>
+        <p>直接兄弟选择器~：选择好多弟弟1</p>
+    </div>
+    <h1>flex</h1>
+    <div class="box">
+        <p>弹性盒子布局。默认是row方向且不换行nowrap，意味着空间不够时会压缩子元素</p>
+        <p>水平垂直居中：justify-content: center; align-items: center;</p>
+        <p>空间剩余时，子元素使用flex-grow决定是否扩展：默认是0，不扩展，保持原来大小；1：扩展占满</p>
+        <p>空间不足时，子元素使用flex-shrink决定是否压缩: 默认是1，压缩；0：不压缩</p>
+        <p>指定换行wrap时，扩展f属性flex-grow和压缩属性flex-shrink无效</p>
+        <p>flex-grow flex-grow flex-basis的复合属性，默认是0 1 auto</p>
+        <p>auto，表示空间多了就扩展；空间小了就压缩</p>
+        <p>none，表示空间多了或小了都保持原样</p>
+        <p>可以指定数值按照比例划分空间,可实现特定布局，如圣杯</p>
+    </div>
+    <h1>position</h1>
+    <div class="box">
+        <p>position属性：relative absolute</p>
+        <p>position口诀：父相子绝；如果父级没有，就再往父辈找，直至body元素</p>
+        <p>z-index:层级；默认后来者居上；可以通过设置z-index提升层级</p>
+    </div>
+    <h1>basic</h1>
+    <div class="box">
+        <p>html有各种各样的标签tag组成</p>
+        <p>div img ul li a form input button</p>
+        <p>css：可叠加；可覆盖；后来居上</p>
+        <p>样式分类：外部样式（推荐）、内部样式、内联样式</p>
+        <p>样式初始化：reset.css | normalize.css</p>
+        <p>基本属性：width heigth padding margin</p>
+        <p>display：inline inline-block block none flex grid</p>
+        <p>box-sizing:border-box | content-box</p>
+    </div>
+
+
+</body>
+
+</html>
