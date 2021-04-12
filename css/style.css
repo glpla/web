@@ -1,0 +1,129 @@
+.w {
+    width: 1100px;
+    margin: 20px auto;
+}
+
+header {
+    position: relative;
+    display: flex;
+    background-color: #f3f4f5;
+    height: 30px;
+    line-height: 30px;
+    /* 提升层级：避免下拉菜单被下方内容覆盖 */
+    z-index: 1;
+}
+
+header>ul {
+    display: flex;
+    margin-left: auto;
+}
+
+.item>a {
+    display: inline-block;
+    padding: 0 10px;
+    border: 1px solid #f3f4f5;
+}
+
+.item:hover>a {
+    color: #f40;
+}
+
+.mine {
+    position: relative;
+}
+
+.mine .inner-nav {
+    display: none;
+}
+
+.link {
+    position: relative;
+    /* 提升层级 */
+    z-index: 2;
+}
+
+.inner-nav {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    width: 200px;
+    padding: 10px;
+    background: rgba(255, 255, 255, .8);
+    border: 1px solid #f3f4f5;
+    /* 降低层级 */
+    z-index: 0;
+}
+
+.mine:hover>a {
+    background-color: #fff;
+    /* 白色边框和白色背景融合 */
+    border-bottom-color: #fff;
+}
+
+.mine:hover .inner-nav {
+    display: block;
+}
+
+.inner-nav a:hover {
+    color: #f40;
+}
+
+/* nav */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-box {
+    width: 140px;
+}
+
+.sql {
+    display: flex;
+    border: 2px solid #f40;
+}
+
+.ipt {
+    width: 260px;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.btn {
+    width: 80px;
+    height: 40px;
+    background: #f40;
+    color: #fff;
+}
+
+.cart {
+    position: relative;
+    width: 160px;
+    height: 40px;
+    border: 1px solid #f4f4f4;
+    color: #f40;
+}
+
+.cart span {
+    padding-right: 20px;
+}
+
+.cart em {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    top: -5px;
+    right: 80px;
+    color: #fff;
+    background: #f40;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.cart:hover {
+    border-color: #f40;
+}
