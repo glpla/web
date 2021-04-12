@@ -2,13 +2,21 @@
     width: 1100px;
     margin: 20px auto;
 }
+.red{
+    color: #f40;
+}
+.spacer{
+    margin: 0 14px;
+}
 
 header {
     position: relative;
     display: flex;
+    color: #999;
     background-color: #f3f4f5;
     height: 30px;
     line-height: 30px;
+    font-size: 12px;
     /* 提升层级：避免下拉菜单被下方内容覆盖 */
     z-index: 1;
 }
@@ -17,14 +25,13 @@ header>ul {
     display: flex;
     margin-left: auto;
 }
-
-.item>a {
-    display: inline-block;
-    padding: 0 10px;
-    border: 1px solid #f3f4f5;
+header>ul>li:last-child{
+    margin-right: 14px;
 }
-
-.item:hover>a {
+header .reg{
+    margin-left: 10px;
+}
+.item:hover {
     color: #f40;
 }
 
@@ -35,9 +42,18 @@ header>ul {
 .mine .inner-nav {
     display: none;
 }
-
+/* 提高了优先级，使得a在hover时箭头保持color */
+.item>span{
+    font-size: 12px;
+    color: #999;
+}
 .link {
+    box-sizing: content-box;
+    display: inline-block;
+    height: 100%;
     position: relative;
+    padding: 0 10px;
+    border: 1px solid transparent;
     /* 提升层级 */
     z-index: 2;
 }
@@ -48,16 +64,17 @@ header>ul {
     top: 30px;
     width: 200px;
     padding: 10px;
-    background: rgba(255, 255, 255, .8);
-    border: 1px solid #f3f4f5;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
     /* 降低层级 */
     z-index: 0;
 }
 
-.mine:hover>a {
+.mine:hover .link {
     background-color: #fff;
     /* 白色边框和白色背景融合 */
-    border-bottom-color: #fff;
+    border-color: #ccc;
+    border-bottom-color: #fff;    
 }
 
 .mine:hover .inner-nav {
