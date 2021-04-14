@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex layout</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .w {
+            width: 600px;
+            margin: 20px auto;
+        }
+
+        .nav ul {
+            display: flex;
+        }
+
+        .nav ul li {
+            margin: 0 10px;
+            text-transform: uppercase;
+        }
+
+        .nav ul li:first-child {
+            margin-right: auto;
+        }
+
+        .box {
+            display: flex;
+            height: 60px;
+            background: #f3f4f5;
+        }
+
+        .inner-box {
+            margin: auto;
+        }
+
+        .info {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .info li {
+            margin: .5rem;
+            padding: 4px 10px;
+            background-color: #f3f4f5;
+            border-radius: 9999px;
+            text-align: center;
+            /* 利用auto保障俩端是对齐的 */
+            flex: 1 0 auto;
+            /* 避免最后一个自动扩展太多 */
+            max-width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="w nav">
+        <ul>
+            <li><a href="javascript:;">nav1</a></li>
+            <li><a href="javascript:;">nav2</a></li>
+            <li><a href="javascript:;">nav3</a></li>
+            <li><a href="javascript:;">nav4</a></li>
+            <li><a href="javascript:;">nav5</a></li>
+            <li><a href="javascript:;">nav6</a></li>
+        </ul>
+    </ul>
+    <div class="w box">
+        <div class="inner-box">v/h center</div>
+    </div>
+    <ul class="w info">
+        <li>hello</li>
+        <li>about us</li>
+        <li>just do it</li>
+        <li>are you ok</li>
+        <li>i am fine</li>
+        <li>coming</li>
+        <li>on my way</li>
+        <li>have a break</li>
+        <li>well done</li>
+        <li>good work</li>
+        <li>spare me</li>
+        <li>go to hell</li>
+    </ul>
+
+</body>
+
+</html>
