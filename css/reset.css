@@ -1,3 +1,24 @@
+:root {
+    --txt-wran-color: #c81623;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    /* project id 2357817 */
+    src: url('//at.alicdn.com/t/font_2357817_unf71j5yu1q.eot');
+    src: url('//at.alicdn.com/t/font_2357817_unf71j5yu1q.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_2357817_unf71j5yu1q.woff2') format('woff2'), url('//at.alicdn.com/t/font_2357817_unf71j5yu1q.woff') format('woff'), url('//at.alicdn.com/t/font_2357817_unf71j5yu1q.ttf') format('truetype'), url('//at.alicdn.com/t/font_2357817_unf71j5yu1q.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    color: var(--txt-wran-color);
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,4 +47,12 @@ img {
 input, button, textarea {
     border: none;
     outline: none;
+}
+
+.code {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 10px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
 }
