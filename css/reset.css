@@ -19,6 +19,11 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+    font-family: yuwei;
+    src: url('../fonts/YuWei/27禹卫书法行书简体.ttf')
+}
+
 * {
     margin: 0;
     padding: 0;
