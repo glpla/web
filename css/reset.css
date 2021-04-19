@@ -21,7 +21,12 @@
 
 @font-face {
     font-family: yuwei;
-    src: url('../fonts/YuWei/27禹卫书法行书简体.ttf')
+    src: url('../fonts/YuWei/YuWeiShuFaXingShuJianTi.ttf')
+}
+
+@font-face {
+    font-family: monospace;
+    src: url('../fonts/monospace/Elronmonospace.ttf')
 }
 
 * {
@@ -58,6 +63,7 @@ input, button, textarea {
     background-color: #f7f7f7;
     padding: 20px;
     margin: 10px 0;
-    font-family: 'Courier New', Courier, monospace;
+    /* not 'monospace' */
+    font-family: monospace, 'Courier New', Courier, monospace;
     font-size: 14px;
 }
