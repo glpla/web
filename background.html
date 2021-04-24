@@ -41,6 +41,22 @@
             background-origin: padding-box;
             background-clip: padding-box;
         }
+
+        .dynamic-bg {
+            height: 300px;
+            background-image: linear-gradient(to top left, #f40 50%, #8888 0);
+            animation: dn 10s linear infinite;
+        }
+
+        @keyframes dn {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -49,6 +65,7 @@
     <div class="box border">border-box</div>
     <div class="box content">content-box</div>
     <div class="box padding">padding-box</div>
+    <div class="dynamic-bg"></div>
 </body>
 
 </html>
