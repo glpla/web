@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        .box {
+            position: relative;
+            margin: 200px auto 0;
+            width: 150px;
+            height: 150px;
+            animation: roll 10s linear infinite;
+        }
+
+        @keyframes roll {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .box span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transform: rotate(calc(18deg*var(--i)));
+        }
+
+        .box span::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #f40;
+            box-shadow: 0 0 10px #f40, 0 0 20px #f40, 0 0 30px #f40, 0 0 80px #f40, 0 0 100px #f40;
+            animation: scale 2s linear infinite;
+            animation-delay: calc(0.1s*var(--i));
+        }
+
+        @keyframes scale {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span style='--i:0'></span>
+        <span style='--i:1'></span>
+        <span style='--i:2'></span>
+        <span style='--i:3'></span>
+        <span style='--i:4'></span>
+        <span style='--i:5'></span>
+        <span style='--i:6'></span>
+        <span style='--i:7'></span>
+        <span style='--i:8'></span>
+        <span style='--i:9'></span>
+        <span style='--i:10'></span>
+        <span style='--i:11'></span>
+        <span style='--i:12'></span>
+        <span style='--i:13'></span>
+        <span style='--i:14'></span>
+        <span style='--i:15'></span>
+        <span style='--i:16'></span>
+        <span style='--i:17'></span>
+        <span style='--i:18'></span>
+        <span style='--i:19'></span>
+    </div>
+
+
+</body>
+
+</html>
