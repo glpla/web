@@ -101,10 +101,29 @@
       margin: 20px;
       background: #fff;
     }
+
+    .border-img>div:nth-child(1) {
+      width: 600px;
+      height: 100px;
+      margin: 10px auto;
+      border: 10px solid;
+      border-image: linear-gradient(#097, #f40) 30 100;
+    }
+    .border-img>div:nth-child(2) {
+      width: 600px;
+      height: 100px;
+      margin: 10px auto;
+      border: 10px solid;
+      border-image: url(imgs/demo.jpg) 20;
+    }
   </style>
 </head>
 
 <body>
+  <div class="border-img">
+    <div></div>
+    <div></div>
+  </div>
   <div class='section shadow'>
     <img src="imgs/demo.jpg" alt="">
   </div>

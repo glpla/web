@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loading</title>
+    <style>
+        body{
+            background-color: #333;
+        }
+        .box {
+            width: 800px;
+            height: 60px;
+            margin: 100px auto;
+            background: repeating-linear-gradient(140deg, #f06 0, #f06 10px, #ff0 0, #ff0 20px);
+            background-size: 60px 60px;
+            animation: move 4s linear infinite;
+
+        }
+
+        @keyframes move {
+            from {
+                background-position: 0px 0px;
+            }
+
+            to {
+                background-position: 120px 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>
