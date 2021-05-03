@@ -39,6 +39,7 @@ body {
     font-family: "montserrat" sans-serif;
     /* 1.5*16px = 24px */
     line-height: 1.5;
+    background-color: #f4f4f4;
 }
 
 a {

@@ -7,21 +7,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>transform text</title>
     <link rel="shortcut icon" href="img/glpla.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
 </head>
 <style>
     body {
         height: 100vh;
-        background-image: linear-gradient(#ff6e32, #ff2408);
+        font-family: 'yuwei';
+        background: #ff2408 linear-gradient(#f40, #ff2408);
+        animation: bg 10s linear infinite;
+    }
+
+    h1 {
+        animation: bg 10s linear infinite;
+    }
+
+    @keyframes bg {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+        }
     }
 
     .wrap {
         position: relative;
-        width: 386px;
+        width: 800px;
         height: 200px;
-        margin: 200px auto 0;       
-        padding: 10px;
-        /* parent */
-        perspective: 800;
+        margin: 200px auto 0;
     }
 
     .txt {
@@ -29,99 +43,28 @@
         text-align: center;
         position: absolute;
         left: 0;
-        top: 0;       
-        /* son */
-        transform-style: preserve-3d;
+        top: 0;
+        color: rgba(255, 255, 255, var(--alpha));
+        animation: trans 2s forwards infinite alternate;
     }
 
-    .txt.t0 {
-        color: rgba(255, 255, 255, 1.0);
-        animation: t0 2s linear forwards infinite alternate;
-    }
-
-    .txt.t1 {
-        color: rgba(255, 255, 255, 0.7);
-        animation: t1 2s linear forwards infinite alternate;
-    }
-
-    .txt.t2 {
-        color: rgba(255, 255, 255, 0.5);
-        animation: t2 2s linear forwards infinite alternate;
-    }
-
-    .txt.t3 {
-        color: rgba(255, 255, 255, 0.3);
-        animation: t3 2s linear forwards infinite alternate;
-    }
-
-    .txt.t4 {
-        color: rgba(255, 55, 255, 0.1);
-        animation: t4 2s linear forwards infinite alternate;
-    }
-
-    @keyframes t0 {
-        0% {
-            opacity: 0;
-        }
-
+    @keyframes trans {
         100% {
-            transform: translate(-24px, -24px) skewX(-30deg);
-            opacity: 1;
-        }
-    }
-
-    @keyframes t1 {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            transform: translate(-18px, -18px) skewX(-30deg);
-            opacity: 1;
-        }
-    }
-
-    @keyframes t2 {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            transform: translate(-12px, -12px) skewX(-30deg);
-            opacity: 1;
-        }
-    }
-
-    @keyframes t3 {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            transform: translate(-6px, -6px) skewX(-30deg);
-            opacity: 1;
-        }
-    }
-
-    @keyframes t4 {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            transform: translate(0px, 0px) skewX(-30deg);
-            opacity: 1;
+            transform: translate(var(--pos), var(--pos)) skewX(-30deg);
         }
     }
 </style>
 
 <body>
+    <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae saepe asperiores maxime voluptates ab? Quos
+        nostrum dolorem facilis laborum quod. Mollitia quod sint aliquid debitis cupiditate, libero voluptatem dolores
+        placeat.</h1>
     <div class="wrap">
-        <span class='txt t0'>CSS3</span>
-        <span class='txt t1'>CSS3</span>
-        <span class='txt t2'>CSS3</span>
-        <span class='txt t3'>CSS3</span>
-        <span class='txt t4'>CSS3</span>
+        <span class='txt t0' style='--pos:-12px;--alpha:1'>妈妈辛苦啦</span>
+        <span class='txt t1' style='--pos:-9px;--alpha:.7'>妈妈辛苦啦</span>
+        <span class='txt t2' style='--pos:-6px;--alpha:.5'>妈妈辛苦啦</span>
+        <span class='txt t3' style='--pos:-3px;--alpha:.3'>妈妈辛苦啦</span>
+        <span class='txt t4' style='--pos:0px;--alpha:.2'>妈妈辛苦啦</span>
     </div>
 </body>
 

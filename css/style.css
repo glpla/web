@@ -36,7 +36,7 @@ header .reg {
     margin-left: 10px;
 }
 
-.item:hover {
+header .item:hover {
     color: #f40;
 }
 
@@ -127,6 +127,7 @@ nav {
     position: relative;
     width: 160px;
     height: 40px;
+    background-color: #fff;
     border: 1px solid #f4f4f4;
     color: #f40;
 }

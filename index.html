@@ -10,6 +10,82 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2357817_73yjugwbqjc.css">
+    <style>
+        .cont {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+        }
+
+        .cont .item {
+            padding: 1rem;
+            background-color: #fff;
+            min-height: 260px;
+            transition: .4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cont>a:hover {
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        .price-box {
+            display: flex;
+            justify-content: space-around;
+            border: 1px solid #e1251b;
+            line-height: 2rem;
+            background-image: linear-gradient(135deg, #e1231b 50%, transparent 0);
+        }
+
+        .cont .new {
+            font-weight: 400;
+            color: #fff;
+            font-size: 120%;
+        }
+
+        .cont .old {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .ad {
+            min-height: 260px;
+            background-color: #fff;
+            background-image: radial-gradient(23rem circle at 10% 10%, #fff 60%, #f405 0), radial-gradient(23rem circle at 20% 10%, #fff 60%, #f409 0), radial-gradient(23rem circle at 30% 10%, #fff 60%, #f40 0);
+        }
+
+        .center {
+            overflow: hidden;
+            position: relative;
+            min-height: 260px;
+            padding: 1rem 1rem 0;
+            background-color: #fff;
+            background-image: radial-gradient(18rem circle at 50% 100%, #e1251b 70%, #fff 0);
+        }
+
+        .center::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(18rem circle at 50% 6%, transparent 80%, #e1251b 0);
+            filter: drop-shadow(0 0 1rem #666);
+        }
+
+        .center h3 {
+            font-weight: 700;
+        }
+
+        .center .center-cont {
+            margin-top: .5rem;
+            background-color: #f6f6f6;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -86,6 +162,30 @@
             <em>1</em>
         </button>
     </nav>
+    <div class="cont w">
+        <a class="ad"></a>
+        <a class="item">
+            <img src="imgs/blog1.jpg" alt="">
+            <p>Lorem ipsum dolor</p>
+            <div class="price-box">
+                <div class="new">&yen;666</div>
+                <div class="old">&yen;888</div>
+            </div>
+        </a>
+        <a class="center">
+            <h3>领券中心</h3>
+            <div class="center-cont"></div>
+        </a>
+        <a class="item">
+            <img src="imgs/blog3.jpg" alt="">
+            <p>Lorem ipsum dolor</p>
+            <div class="price-box">
+                <div class="new">&yen;666</div>
+                <div class="old">&yen;888</div>
+            </div>
+        </a>
+        <a class="ad"></a>
+    </div>
 
 </body>
 
