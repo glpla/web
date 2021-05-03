@@ -53,7 +53,10 @@
         .ad {
             min-height: 260px;
             background-color: #fff;
-            background-image: radial-gradient(23rem circle at 10% 10%, #fff 60%, #f405 0), radial-gradient(23rem circle at 20% 10%, #fff 60%, #f409 0), radial-gradient(23rem circle at 30% 10%, #fff 60%, #f40 0);
+            background-image:
+                radial-gradient(23rem circle at 10% 10%, transparent 60%, #f405 0),
+                radial-gradient(23rem circle at 20% 10%, transparent 60%, #f409 0),
+                radial-gradient(23rem circle at 30% 10%, transparent 60%, #f40 0);
         }
 
         .center {
@@ -62,7 +65,9 @@
             min-height: 260px;
             padding: 1rem 1rem 0;
             background-color: #fff;
-            background-image: radial-gradient(18rem circle at 50% 100%, #e1251b 70%, #fff 0);
+            background-image: radial-gradient(17rem circle at 50% 100%, #e1251b 70%, #fff 0);
+            display: flex;
+            flex-direction: column;
         }
 
         .center::after {
@@ -78,12 +83,50 @@
 
         .center h3 {
             font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .center .center-cont {
-            margin-top: .5rem;
+            position: relative;
+            flex-grow: 1;
+            border-bottom: 2px dotted #e1251b;
             background-color: #f6f6f6;
-            height: 100%;
+        }
+
+        .center .center-cont::before,
+        .center .center-cont::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #e1251b;
+            z-index: 1;
+        }
+
+        .center .center-cont::before {
+            left: -0.5rem;
+        }
+
+        .center .center-cont::after {
+            right: -0.5rem;
+        }
+
+        .card {
+            min-height: 260px;
+            background-color: #fff;
+            background-image:
+                radial-gradient(23rem circle at 20% 10%, transparent 60%, #f405 0),
+                radial-gradient(23rem circle at 40% 10%, transparent 60%, #f40 0);
+        }
+
+        .test {
+            margin: 100px auto;
+            width: 500px;
+            height: 250px;
+            background-color: #f40;
+            background-image: radial-gradient(circle at 0% 0%, #fff 50%, transparent 0);
         }
     </style>
 </head>
@@ -165,7 +208,7 @@
     <div class="cont w">
         <a class="ad"></a>
         <a class="item">
-            <img src="imgs/blog1.jpg" alt="">
+            <img src="imgs/blog0.jpg" alt="">
             <p>Lorem ipsum dolor</p>
             <div class="price-box">
                 <div class="new">&yen;666</div>
@@ -174,6 +217,8 @@
         </a>
         <a class="center">
             <h3>领券中心</h3>
+            <div class="center-cont"></div>
+            <div class="center-cont"></div>
             <div class="center-cont"></div>
         </a>
         <a class="item">
@@ -184,9 +229,9 @@
                 <div class="old">&yen;888</div>
             </div>
         </a>
-        <a class="ad"></a>
+        <a class="card"></a>
     </div>
-
+    <div class="test"></div>
 </body>
 
 </html>
