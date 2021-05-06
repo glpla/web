@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2521243_f10kda3wrds.css">
+    <style>
+        .v-flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wel {
+            width: 100vw;
+            height: 100vh;
+            background-color: #333;
+        }
+
+        .wel h1 {
+            text-transform: uppercase;
+            font-size: 4rem;
+            text-shadow: 0 0 6px #fff;
+            user-select: none;
+        }
+
+        .wel h5 {
+            color: #ccc;
+            margin-bottom: 2rem;
+            text-transform: capitalize;
+        }
+
+        .wel a {
+            display: block;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: #fff;
+            background-color: #f40;
+            text-transform: uppercase;
+            font-weight: 400;
+            line-height: 60px;
+            text-align: center;
+            transition: .4s;
+        }
+
+        .wel a:hover {
+            transform: scale(1.2);
+            background-color: #fff;
+            color: #f40;
+        }
+
+        nav {
+            height: 100vh;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            line-height: 40px;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        .nav-item {
+            position: relative;
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding: 8px 10px;
+            transition: .4s;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            left: 0%;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #f40;
+            transition: .4s;
+        }
+
+        .nav-item:hover {
+            color: #f40;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        section {
+            width: 80%;
+            margin: 0 auto;
+            display: none;
+            height: 100vh;
+        }
+
+        section:target {
+            display: block;
+        }
+
+        .menu {
+            display: flex;
+            line-height: 4rem;
+        }
+
+        .menu h1 {
+            font-size: 1.5rem;
+            margin-right: auto;
+            text-transform: uppercase;
+        }
+
+        .menu .icon {
+            display: inline-block;
+            color: inherit;
+            font-size: 1.5rem;
+            padding: 0 1rem;
+            transition: .4s;
+        }
+
+        .menu .icon:hover {
+            color: #f40;
+            transform: scale(1.5);
+        }
+
+        /* translate */
+        #translate .box {
+            width: 200px;
+            height: 200px;
+            background-color: #888;
+            perspective: 800px;
+            transform-style: preserve-3d;
+        }
+
+        .inner {
+            width: 50px;
+            height: 50px;
+            background-color: #f40;
+            /* transform: translate(50px, 50px); */
+            transform: translate3d(20px, 20px, 20px);
+        }
+
+        #rotate .box {
+            display: inline-block;
+            width: 100%;
+            font-size: 4rem;
+            text-align: center;
+            transition: .4s;
+        }
+
+        #rotate .box:hover {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="v-flex wel" id='home'>
+        <h1>transform</h1>
+        <h5>available only for inline-blcok and block</h5>
+        <a href="#nav">start</a>
+    </div>
+    <nav id="nav" class="v-flex">
+        <ul>
+            <li><a class="nav-item" href="#translate">translate</a></li>
+            <li><a class="nav-item" href="#scale">scale</a></li>
+            <li><a class="nav-item" href="#rotate">rotate</a></li>
+            <li><a class="nav-item" href="#skew">skew</a></li>
+            <li><a class="nav-item" href="#perspective">perspective</a></li>
+        </ul>
+    </nav>
+    <section id="translate">
+        <div class="menu">
+            <h1>translate</h1>
+            <a href="#nav"><i class="iconfont icon54 icon"></i></a>
+            <a href="#home"><i class="iconfont icon51 icon"></i></a>
+        </div>
+        <div class="box">
+            <div class="inner"></div>
+            <p>位移并没有导致元素脱离文档流</p>
+        </div>
+    </section>
+    <section id="scale">
+        <div class="menu">
+            <h1>scale</h1>
+            <a href="#nav"><i class="iconfont icon54 icon"></i></a>
+            <a href="#home"><i class="iconfont icon51 icon"></i></a>
+        </div>
+    </section>
+    <section id="rotate">
+        <div class="menu">
+            <h1>rotate</h1>
+            <a href="#nav"><i class="iconfont icon54 icon"></i></a>
+            <a href="#home"><i class="iconfont icon51 icon"></i></a>
+        </div>
+        <i class="iconfont iconfaxian box"></i>
+    </section>
+    <section id="skew">
+        <div class="menu">
+            <h1>skew</h1>
+            <a href="#nav"><i class="iconfont icon54 icon"></i></a>
+            <a href="#home"><i class="iconfont icon51 icon"></i></a>
+        </div>
+    </section>
+    <section id="perspective">
+        <div class="menu">
+            <h1>perspective</h1>
+            <a href="#nav"><i class="iconfont icon54 icon"></i></a>
+            <a href="#home"><i class="iconfont icon51 icon"></i></a>
+        </div>
+    </section>
+
+</body>
+
+</html>
