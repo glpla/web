@@ -142,15 +142,41 @@
             transform-style: preserve-3d;
         }
 
-        .inner {
+        #translate .inner {
             width: 50px;
             height: 50px;
             background-color: #f40;
-            /* transform: translate(50px, 50px); */
-            transform: translate3d(20px, 20px, 20px);
+            transition: 0.5s;
         }
 
+        #translate .box:hover .inner {
+            transform: translate(50px, 50px);
+            /* transform: translate3d(20px, 20px, 20px); */
+        }
+
+        /* scale */
+        #scale .box {
+            width: 100px;
+            height: 100px;
+            margin: 100px auto 0;
+            background-color: #f40;
+            border-radius: 50%;
+        }
+
+        #scale .box:hover {
+            animation: scaleCircle .5s linear infinite;
+        }
+
+        @keyframes scaleCircle {
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* rotate */
         #rotate .box {
+            margin-top: 100px;
             display: inline-block;
             width: 100%;
             font-size: 4rem;
@@ -161,6 +187,59 @@
         #rotate .box:hover {
             transform: rotate(90deg);
         }
+
+        /* skew */
+        #skew .box {
+            margin: 100px auto 0;
+            width: 200px;
+            height: 200px;
+            background-color: #f40;
+            transition: .5s;
+        }
+
+        #skew .box:hover {
+            transform: skew(45deg);
+        }
+
+        /* perspective */
+        #perspective .wrap{
+            width: 200px;
+            height: 300px;
+            margin: 100px auto;
+            border: 4px solid #fff;
+            box-shadow: 0 0 8px #888 inset;
+            perspective: 800px;
+        }
+        #perspective .box{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: 1s;
+        }
+        #perspective .front,
+        #perspective .back{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f40;
+        }
+        #perspective .front{
+            transform: rotateY(0deg);
+        }
+
+        #perspective .back{
+            transform: rotateY(180deg);
+        }
+        #perspective .wrap:hover .box{
+            transform: rotateY(180deg);
+        }
+
+        /* tips: */
+        /* 父亲/爷爷指定透视深度：perspective */
+        /* 孩子指定3D模式：transform-style */
     </style>
 </head>
 
@@ -196,6 +275,7 @@
             <a href="#nav"><i class="iconfont icon54 icon"></i></a>
             <a href="#home"><i class="iconfont icon51 icon"></i></a>
         </div>
+        <div class="box"></div>
     </section>
     <section id="rotate">
         <div class="menu">
@@ -211,12 +291,23 @@
             <a href="#nav"><i class="iconfont icon54 icon"></i></a>
             <a href="#home"><i class="iconfont icon51 icon"></i></a>
         </div>
+        <div class="box"></div>
     </section>
     <section id="perspective">
         <div class="menu">
             <h1>perspective</h1>
             <a href="#nav"><i class="iconfont icon54 icon"></i></a>
             <a href="#home"><i class="iconfont icon51 icon"></i></a>
+        </div>
+        <div class="wrap">
+            <div class="box">
+                <div class="v-flex front">front
+                    <!-- <img src="imgs/blog0.jpg" alt=""> -->
+                </div>
+                <div class="v-flex back">back
+                    <!-- <img src="imgs/blog1.jpg" alt=""> -->
+                </div>
+            </div>
         </div>
     </section>
 
