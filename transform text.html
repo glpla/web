@@ -19,11 +19,12 @@
         width: 100vw;
         height: 100vh;
         background: #f40;
-        animation: bg 10s linear infinite;
+        /* animation: bg 10s linear infinite; */
+        color: var(--color);
     }
 
     h1 {
-        animation: bg 10s linear infinite;
+        /* animation: bg 10s linear infinite; */
     }
 
     @keyframes bg {
@@ -41,7 +42,7 @@
         position: relative;
         width: 800px;
         height: 200px;        
-        margin: 200px auto 0;        
+        margin: 200px auto 0;            
     }
 
     .txt {
@@ -62,7 +63,8 @@
 </style>
 
 <body>
-    <div class="container">
+    <div class="container" style="--color:#fff">
+        <h1>Lorem ipsum dolor sit amet.</h1>
         <div class="wrap">
             <span class='txt t0' style='--pos:-12px;--alpha:1'>妈妈辛苦啦</span>
             <span class='txt t1' style='--pos:-9px;--alpha:.7'>妈妈辛苦啦</span>

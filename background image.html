@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>background</title>
+  <title>background image</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/reset.css">
 </head>
@@ -58,6 +58,7 @@
     z-index: -1;
     transform: skew(-45deg);
   }
+
   #transparent-border {
     width: 800px;
     height: 600px;
@@ -69,15 +70,7 @@
     background-origin: padding-box;
     margin: 20px auto;
   }
-
-  .linear-color {
-    width: 800px;
-    height: 120px;
-    margin: 20px auto;
-    background: rgba(255, 0, 0, 0.5);
-    background-image: linear-gradient(90deg, #fff 10px, transparent 10px), linear-gradient(0deg, #fff 10px, transparent 10px);
-    background-size: 20px 20px;
-  }
+  
 
   .border-img {
     display: flex;
@@ -136,66 +129,7 @@
     color: #fff;
     text-align: center;
     transform: skew(45deg);
-  }  
-
-  .rect {
-    display: flex;
-    justify-content: space-around;
   }
-
-  .rect div {
-    width: 100px;
-    height: 40px;
-    background: #f06;
-  }
-
-  .rect div:nth-child(1) {
-    background: linear-gradient(45deg, transparent 15px, #f06 0);
-  }
-
-  .rect div:nth-child(2) {
-    background: linear-gradient(135deg, transparent 15px, #f06 0);
-  }
-
-  .rect div:nth-child(3) {
-    background: linear-gradient(-45deg, transparent 15px, #f06 0);
-  }
-
-  .rect div:nth-child(4) {
-    background: linear-gradient(-135deg, transparent 15px, #f06 0);
-  }
-
-  .rect div:nth-child(5) {
-    background: linear-gradient(225deg, transparent 15px, #f06 0) top, linear-gradient(-45deg, transparent 15px, #f06 0) bottom;
-    background-size: 100% 50%;
-    background-repeat: no-repeat;
-  }
-
-  .rect div:nth-child(6) {
-    background: linear-gradient(135deg, transparent 15px, #f06 0) top, linear-gradient(45deg, transparent 15px, #f06 0) bottom;
-    background-size: 100% 50%;
-    background-repeat: no-repeat;
-  }
-
-  .rect div:nth-child(7) {
-    background: linear-gradient(225deg, transparent 15px, #f06 0) bottom, linear-gradient(-45deg, transparent 15px, #f06 0) top;
-    background-size: 100% 50%;
-    background-repeat: no-repeat;
-  }
-
-  .rect div:nth-child(8) {
-    background: linear-gradient(135deg, transparent 15px, #f06 0) bottom, linear-gradient(45deg, transparent 15px, #f06 0) top;
-    background-size: 100% 50%;
-    background-repeat: no-repeat;
-  }
-
-  .rect div:nth-child(9) {
-    background: linear-gradient(135deg, transparent 15px, #f06 0) top left, linear-gradient(45deg, transparent 15px, #f06 0) bottom left,
-      linear-gradient(225deg, transparent 15px, #f06 0) top right, linear-gradient(-45deg, transparent 15px, #f06 0) bottom right;
-    background-size: 50% 50%;
-    background-repeat: no-repeat;
-  }
-
   .inner-round {
     width: 800px;
     height: 200px;
@@ -210,29 +144,7 @@
 </style>
 
 
-<body>
-  <div id='nav'>
-    <ul class='tran-nav'>
-      <li class='tran-before'>54414</li>
-      <li class='tran-before'>75716</li>
-      <li class='tran-before'>75660</li>
-      <li class='tran-before'>glboy</li>
-      <li class='tran-before'>glpla</li>
-      <li class='tran-before'>cnplaman</li>
-    </ul>
-  </div>
-  <h1>background: linear-gradient(45deg, transparent 15px, #f06 0);</h1>
-  <div class="rect">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-  </div>  
+<body>  
   <div class="border-img">
     <div></div>
     <div></div>
@@ -242,8 +154,7 @@
     <div></div>
     <div></div>
     <div></div>
-  </div>
-  <div class="linear-color">asdfasdf</div>
+  </div>  
   <h1>transparent border</h1>
   <div id='transparent-border'>
     <p>透明边框</p>
@@ -271,7 +182,7 @@
     </ol>
   </div>
   <h1>inner round:outline</h1>
-  <div class="inner-round"></div>  
+  <div class="inner-round"></div>
 </body>
 
 </html>
