@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>transform</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_2521243_f10kda3wrds.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2503000_imiowl3ajjs.css">
     <style>
+        :root {
+            --deg: 11px
+        }
+
         .v-flex {
             display: flex;
             flex-direction: column;
@@ -66,36 +70,71 @@
         }
 
         nav ul li {
-            margin: 0 1rem;
+            perspective: 800px;
+        }
+
+        nav ul li:nth-child(1) {
+            z-index: 5;
+        }
+
+        nav ul li:nth-child(2) {
+            z-index: 4;
+        }
+
+        nav ul li:nth-child(3) {
+            z-index: 3;
+        }
+
+        nav ul li:nth-child(4) {
+            z-index: 2;
+        }
+
+        nav ul li:nth-child(5) {
+            z-index: 1;
         }
 
         .nav-item {
+            display: block;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
             position: relative;
-            display: inline-block;
-            font-size: 1.5rem;
             font-weight: 400;
             text-transform: uppercase;
             padding: 8px 10px;
-            transition: .4s;
+            transform-style: preserve-3d;
+            transform: rotateY(20deg);
+            transition: 1s;
         }
 
-        .nav-item::after {
-            content: '';
+        .nav-item span {
             position: absolute;
-            left: 0%;
-            bottom: 0;
-            width: 0%;
-            height: 2px;
-            background-color: #f40;
-            transition: .4s;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #fff;
         }
 
         .nav-item:hover {
-            color: #f40;
+            transform: rotateY(20deg) rotateX(240deg);
         }
 
-        .nav-item:hover::after {
-            width: 100%;
+        .nav-item span:nth-child(1) {
+            background-color: #078;
+            transform: rotateX(-120deg) translateZ(var(--deg));
+        }
+
+        .nav-item span:nth-child(2) {
+            background-color: #780;
+            transform: rotateX(120deg) translateZ(var(--deg));
+        }
+
+        .nav-item span:nth-child(3) {
+            font-size: 1.5rem;
+            background-color: #f40;
+            transform: rotateX(0deg) translateZ(var(--deg));
         }
 
         section {
@@ -133,33 +172,43 @@
             transform: scale(1.5);
         }
 
-        /* translate */
-        #translate .box {
+        #perspective .wrap {
             width: 200px;
-            height: 200px;
-            background-color: #888;
+            height: 350px;
+            margin: 0 auto;
+            padding: 10px;
+            box-shadow: 0 0 6px #888 inset;
             perspective: 800px;
-            transform-style: preserve-3d;
         }
 
-        .inner {
-            width: 50px;
-            height: 50px;
-            background-color: #f40;
-            /* transform: translate(50px, 50px); */
-            transform: translate3d(20px, 20px, 20px);
-        }
-
-        #rotate .box {
-            display: inline-block;
+        #perspective .box {
+            position: relative;
             width: 100%;
-            font-size: 4rem;
-            text-align: center;
-            transition: .4s;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: 1s;
         }
 
-        #rotate .box:hover {
-            transform: rotate(90deg);
+        #perspective .wrap:hover .box {
+            transform: rotateY(180deg);
+        }
+
+        #perspective .box>* {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #perspective .front {
+            object-fit: contain;
+            background-color: #f40;
+        }
+
+        #perspective .back {
+            background-color: #098;
+            transform: rotateY(180deg);
         }
     </style>
 </head>
@@ -172,51 +221,72 @@
     </div>
     <nav id="nav" class="v-flex">
         <ul>
-            <li><a class="nav-item" href="#translate">translate</a></li>
-            <li><a class="nav-item" href="#scale">scale</a></li>
-            <li><a class="nav-item" href="#rotate">rotate</a></li>
-            <li><a class="nav-item" href="#skew">skew</a></li>
-            <li><a class="nav-item" href="#perspective">perspective</a></li>
+            <li><a class="nav-item" href="#translate">
+                    <span>translate</span>
+                    <span>位移</span>
+                    <span class="iconfont icon-copy"></span>
+                </a></li>
+            <li><a class="nav-item" href="#scale">
+                    <span>scale</span>
+                    <span>缩放</span>
+                    <span class="iconfont icon-map-zoom-out"></span>
+                </a></li>
+            <li><a class="nav-item" href="#rotate">
+                    <span>rotate</span>
+                    <span>旋转</span>
+                    <span class="iconfont icon-360-rotate"></span>
+                </a></li>
+            <li><a class="nav-item" href="#skew">
+                    <span>skew</span>
+                    <span>倾斜</span>
+                    <span class="iconfont icon-panorama-outlined"></span>
+                </a></li>
+            <li><a class="nav-item" href="#perspective">
+                    <span>perspective</span>
+                    <span>透视</span>
+                    <span class="iconfont icon-transform"></span>
+                </a></li>
         </ul>
     </nav>
     <section id="translate">
         <div class="menu">
             <h1>translate</h1>
-            <a href="#nav"><i class="iconfont icon54 icon"></i></a>
-            <a href="#home"><i class="iconfont icon51 icon"></i></a>
-        </div>
-        <div class="box">
-            <div class="inner"></div>
-            <p>位移并没有导致元素脱离文档流</p>
+            <a href="#nav"><i class="iconfont icon-liebiao icon"></i></a>
+            <a href="#home"><i class="iconfont icon-home2 icon"></i></a>
         </div>
     </section>
     <section id="scale">
         <div class="menu">
             <h1>scale</h1>
-            <a href="#nav"><i class="iconfont icon54 icon"></i></a>
-            <a href="#home"><i class="iconfont icon51 icon"></i></a>
+            <a href="#nav"><i class="iconfont icon-liebiao icon"></i></a>
+            <a href="#home"><i class="iconfont icon-home2 icon"></i></a>
         </div>
     </section>
     <section id="rotate">
         <div class="menu">
             <h1>rotate</h1>
-            <a href="#nav"><i class="iconfont icon54 icon"></i></a>
-            <a href="#home"><i class="iconfont icon51 icon"></i></a>
+            <a href="#nav"><i class="iconfont icon-liebiao icon"></i></a>
+            <a href="#home"><i class="iconfont icon-home2 icon"></i></a>
         </div>
-        <i class="iconfont iconfaxian box"></i>
     </section>
     <section id="skew">
         <div class="menu">
             <h1>skew</h1>
-            <a href="#nav"><i class="iconfont icon54 icon"></i></a>
-            <a href="#home"><i class="iconfont icon51 icon"></i></a>
+            <a href="#nav"><i class="iconfont icon-liebiao icon"></i></a>
+            <a href="#home"><i class="iconfont icon-home2 icon"></i></a>
         </div>
     </section>
     <section id="perspective">
         <div class="menu">
             <h1>perspective</h1>
-            <a href="#nav"><i class="iconfont icon54 icon"></i></a>
-            <a href="#home"><i class="iconfont icon51 icon"></i></a>
+            <a href="#nav"><i class="iconfont icon-liebiao icon"></i></a>
+            <a href="#home"><i class="iconfont icon-home2 icon"></i></a>
+        </div>
+        <div class="wrap">
+            <div class="box">
+                <div class="back">glc</div>
+                <img src="imgs/flag.jpg" alt="" class="front">
+            </div>
         </div>
     </section>
 
