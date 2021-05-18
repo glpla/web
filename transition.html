@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tmp.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .box {
+            position: relative;
+            width: 500px;
+            height: 380px;
+            padding: 10px;
+            margin: 100px auto;
+            overflow: hidden;
+            background: #2980b9;
+        }
+
+        .box>div {
+            position: absolute;
+            background-color: #f2f3f4;
+        }
+
+        .box div:nth-child(2) {
+            width: 270px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            left: 10px;
+            bottom: -100px;
+            font-family: yuwei;
+            font-size: 28px;
+            transition: .4s;
+        }
+
+        .box div:nth-child(3) {
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            right: 10px;
+            bottom: -100px;
+            transition: .4s .1s;
+        }
+
+        .box div:nth-child(4) {
+            width: 200px;
+            height: 250px;
+            padding: 10px;
+            text-indent: 2em;
+            text-align: justify;
+            top: 10px;
+            right: -200px;
+            transition: .4s .05s;
+        }
+
+        .box img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .box:hover img {
+            width: 270px;
+            height: 250px;
+        }
+
+        .box:hover div:nth-child(2) {
+            bottom: 10px;
+        }
+
+        .box:hover div:nth-child(3) {
+            bottom: 10px;
+        }
+
+        .box:hover div:nth-child(4) {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tmp"></div>
+    <h1>transition: property duration timing-function delay;</h1>
+    <div class="box">
+        <img src="imgs/Mars.jfif" alt="">
+        <div>祝融号火星车</div>
+        <div>2021-05-15 20:20</div>
+        <div>祝融号，为天问一号任务火星车。高度有1米85，重量达到240公斤左右。设计寿命为3个火星月，相当于约92个地球日。驱散黑暗，带来温暖。“祝融”号寓意点燃中国星际探测的火种，指引航天人不断超越自我，逐梦星辰。
+        </div>
+    </div>
+</body>
+
+</html>
