@@ -5,11 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DEMO</title>
+    <style>
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            background-color: #078;
+            animation: roll 1.5s linear infinite;
+        }
+
+        .box::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -100px;
+            z-index: -1;
+            width: 200px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #888;
+            animation: scale 1.5s linear infinite;
+        }
+
+        @keyframes roll {
+            50% {
+                top: 0px;
+                transform: translateY(100px) rotateZ(45deg);
+                border-bottom-right-radius: 50%;
+            }
+
+            100% {
+                transform: rotateZ(90deg);
+            }
+        }
+
+        @keyframes scale {
+            50% {
+                transform: scale(1.4);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
 
 <body>
-
+    <div class="box"></div>
 </body>
 
 </html>

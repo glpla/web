@@ -20,10 +20,6 @@
         }
 
         @keyframes roll {
-            0% {
-                filter: hue-rotate(0deg);
-            }
-
             100% {
                 filter: hue-rotate(360deg);
             }
@@ -47,18 +43,20 @@
             height: 20px;
             border-radius: 50%;
             background-color: #f40;
-            box-shadow: 0 0 10px #f40, 0 0 20px #f40, 0 0 30px #f40, 0 0 80px #f40, 0 0 100px #f40;
+            box-shadow:
+                0 0 10px #f40,
+                0 0 20px #f40,
+                0 0 30px #f40,
+                0 0 80px #f40,
+                0 0 100px #f40;
+            transform: scale(0);
             animation: scale 2s linear infinite;
             animation-delay: calc(0.1s*var(--i));
         }
 
         @keyframes scale {
-            0% {
-                transform: scale(1);
-            }
-
             100% {
-                transform: scale(0);
+                transform: scale(1);
             }
         }
     </style>
