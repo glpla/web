@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>transition</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/tmp.css">
     <style>
         h1 {
             text-align: center;
@@ -86,11 +85,156 @@
         .box:hover div:nth-child(4) {
             right: 10px;
         }
+
+        /* example2 */
+        .pos {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            background-color: #eeece1;
+            overflow: hidden;
+        }
+
+        .pos div {
+            position: absolute;
+            left: -400px;
+            top: -400px;
+            width: 360px;
+            height: 360px;
+            border: 10px solid #f40;
+            transform-origin: left top;
+            transition: 1s;
+        }
+
+        .pos:hover div {
+            left: 20px;
+            top: 20px;
+            transform: rotate(360deg);
+        }
+
+        /* example3 */
+        .tran {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            border: 10px solid #b22222;
+            overflow: hidden;
+        }
+
+        .tran div {
+            position: absolute;
+            left: 0;
+            bottom: -300px;
+            width: 600px;
+            height: 300px;
+            background-color: #ffd700;
+            transform-origin: left top;
+            transition: .8s;
+        }
+
+        .tran:hover div {
+            transform: rotate(-20deg);
+        }
+
+        /* example4 */
+        .border {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: #eeece1;
+        }
+
+        .h {
+            width: 200px;
+            height: 160px;
+            border: solid #b22222;
+            border-width: 2px 0;
+            transform-origin: left center;
+            transform: scaleX(0);
+            transition: 1s;
+        }
+
+        .v {
+            width: 160px;
+            height: 200px;
+            border: solid #b22222;
+            border-width: 0px 2px;
+            transform: scaleY(0);
+            transition: .6s;
+        }
+
+        .border:hover .h {
+            transform: scaleX(1);
+        }
+
+        .border:hover .v {
+            transform: scaleY(1);
+        }
+
+        /* example5 */
+        .rect {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            background-color: #eeece1;
+            margin: 100px auto;
+        }
+
+        .rect div {
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            width: 100%;
+            height: 100%;
+            border: 6px solid #ffd700;
+            background-color: #f40;
+            transform-origin: center bottom;
+            transform: scale(.4);
+            transition: .4s;
+        }
+
+        .rect:hover div {
+            bottom: 0;
+            transform: scale(1);
+        }
+
+        /* example6 */
+
+
+        .circle {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            border-radius: 50%;
+            background-image: url(imgs/flag.jpg);
+            background-size: cover;
+        }
+
+        .circle::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            top: -10px;
+            background-image: linear-gradient(#eeece1 50%, #d40 0);
+            border-radius: 50%;
+            transition: 1s;
+            z-index: -1;
+        }
+
+
+        .circle:hover::before {
+            transform: rotate(-180deg);
+        }
     </style>
 </head>
 
 <body>
-    <div class="tmp"></div>
     <h1>transition: property duration timing-function delay;</h1>
     <div class="box">
         <img src="imgs/Mars.jfif" alt="">
@@ -98,6 +242,21 @@
         <div>2021-05-15 20:20</div>
         <div>祝融号，为天问一号任务火星车。高度有1米85，重量达到240公斤左右。设计寿命为3个火星月，相当于约92个地球日。驱散黑暗，带来温暖。“祝融”号寓意点燃中国星际探测的火种，指引航天人不断超越自我，逐梦星辰。
         </div>
+    </div>
+    <div class="pos">
+        <div></div>
+    </div>
+    <div class="tran">
+        <div></div>
+    </div>
+    <div class="border">
+        <div class="h dom-center"></div>
+        <div class="v dom-center"></div>
+    </div>
+    <div class="rect">
+        <div></div>
+    </div>
+    <div class="circle">
     </div>
 </body>
 
