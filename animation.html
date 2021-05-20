@@ -169,6 +169,62 @@
         }
 
         /* example3 */
+        .loading-box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            animation: hue 2s linear infinite;
+        }
+
+        @keyframes hue {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .loading-box span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid #f40; */
+            transform: rotate(calc(var(--i)*18deg));
+        }
+
+        .loading-box span::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #f40;
+            border-radius: 50%;
+            box-shadow:
+                0 0 4px #f40,
+                0 0 8px #f40,
+                0 0 12px #f40,
+                0 0 16px #f40,
+                0 0 20px #f40;
+            transform: scale(0);
+            animation: scale-box 3s linear infinite;
+            animation-delay: calc(var(--i)*0.1s);
+        }
+
+        @keyframes scale-box {
+            100% {
+                transform: scale(1);
+            }
+
+        }
+
+        /* example4 */
         .wrapper {
             width: 100%;
             height: 450px;
@@ -239,7 +295,7 @@
             }
         }
 
-        /* example4 */
+        /* example5 */
         .ring {
             width: 100px;
             height: 100px;
@@ -318,6 +374,28 @@
         <div class="cube-box">
             <div class="cube"></div>
         </div>
+    </div>
+    <div class="loading-box">
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style='--i:2'></span>
+        <span style='--i:3'></span>
+        <span style='--i:4'></span>
+        <span style='--i:5'></span>
+        <span style='--i:6'></span>
+        <span style='--i:7'></span>
+        <span style='--i:8'></span>
+        <span style='--i:9'></span>
+        <span style='--i:10'></span>
+        <span style='--i:11'></span>
+        <span style='--i:12'></span>
+        <span style='--i:13'></span>
+        <span style='--i:14'></span>
+        <span style='--i:15'></span>
+        <span style='--i:16'></span>
+        <span style='--i:17'></span>
+        <span style='--i:18'></span>
+        <span style='--i:19'></span>
     </div>
     <div id="wrapper" class="wrapper">
         <div class="box"></div>
