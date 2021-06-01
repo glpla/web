@@ -8,6 +8,15 @@
   <title>media query</title>
   <link rel="stylesheet" href="css/reset.css">
   <style>
+    html,
+    body {
+      font-size: 62.5%;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+
     .box {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -20,19 +29,19 @@
       background-size: cover;
     }
 
-    @media (max-width:1024px) {
+    @media (max-width:1023px) {
       .box {
         grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    @media (max-width:768px) {
+    @media (max-width:766px) {
       .box {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width:375px) {
+    @media (max-width:374px) {
       .box {
         grid-template-columns: repeat(1, 1fr);
       }
@@ -42,6 +51,9 @@
 
 <body>
   <div class="box">
+    <p>rem em</p>
+    <p>vw vh</p>
+    <p>media query</p>
     <div class="img"></div>
     <div class="img"></div>
     <div class="img"></div>
