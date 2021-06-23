@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    .swiper-container {
+      width: 640px;
+      height: 360px;
+    }
+
+    .swiper-slide {
+      width: 640px;
+      height: 360px;
+      background-size: cover;
+    }
+
+    .swiper-slide:nth-child(1) {
+      background-image: url(img/rou0.jpg);
+    }
+
+    .swiper-slide:nth-child(2) {
+      background-image: url(img/rou1.jpg);
+    }
+
+    .swiper-slide:nth-child(3) {
+      background-image: url(img/rou2.jpg);
+    }
+
+    .swiper-slide:nth-child(4) {
+      background-image: url(img/rou3.jpg);
+    }
+
+    .swiper-slide:nth-child(5) {
+      background-image: url(img/rou4.jpg);
+    }
+
+    .swiper-slide:nth-child(6) {
+      background-image: url(img/rou5.jpg);
+    }
+
+    .swiper-slide:nth-child(7) {
+      background-image: url(img/rou6.jpg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">1111</div>
+      <div class="swiper-slide">2222222222</div>
+      <div class="swiper-slide">33333333</div>
+      <div class="swiper-slide">44444444444</div>
+      <div class="swiper-slide">5555555555555555</div>
+      <div class="swiper-slide">666666666666</div>
+      <div class="swiper-slide">777777777777777777</div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <!-- <div class="swiper-pagination"></div> -->
+
+    <!-- 如果需要导航按钮 -->
+    <!-- <div class="swiper-button-prev"></div> -->
+    <!-- <div class="swiper-button-next"></div> -->
+
+    <!-- 如果需要滚动条 -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+    <script>
+      var mySwiper = new Swiper('.swiper-container', {
+        // 垂直切换选项
+        // direction: 'vertical',
+        // 循环模式选项
+        loop: true,
+
+        // added
+        autoplay: true,
+        speed: 1000,
+        effect: 'cube',
+        mousewheel: true,
+
+        // 如果需要分页器
+        // pagination: {
+        //   el: '.swiper-pagination',
+        // },
+
+        // 如果需要前进后退按钮
+        // navigation: {
+        //   nextEl: '.swiper-button-next',
+        //   prevEl: '.swiper-button-prev',
+        // },
+
+        // 如果需要滚动条
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        // },
+      })
+    </script>
+  </div>
+</body>
+
+</html>

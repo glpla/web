@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slider checkbox</title>
+  <style>
+    .wrap {
+      position: relative;
+      width: 640px;
+      height: 360px;
+      margin: 100px auto 0;
+      overflow: hidden;
+    }
+
+    .img-box {
+      width: 500%;
+      height: 100%;
+      display: flex;
+      transition: 1s;
+    }
+
+    .img-box .img {
+      width: 20%;
+      height: 100%;
+      background-size: cover;
+    }
+
+    .img-box .img:nth-child(1) {
+      background-image: url(img/rou0.jpg);
+    }
+
+    .img-box .img:nth-child(2) {
+      background-image: url(img/rou1.jpg);
+    }
+
+    .img-box .img:nth-child(3) {
+      background-image: url(img/rou2.jpg);
+    }
+
+    .img-box .img:nth-child(4) {
+      background-image: url(img/rou3.jpg);
+    }
+
+    .img-box .img:nth-child(5) {
+      background-image: url(img/rou4.jpg);
+    }
+
+    input:nth-child(1):checked~.img-box {
+      transform: translateX(0px);
+    }
+
+    input:nth-child(2):checked~.img-box {
+      transform: translateX(-640px);
+    }
+
+    input:nth-child(3):checked~.img-box {
+      transform: translateX(-1280px);
+    }
+
+    input:nth-child(4):checked~.img-box {
+      transform: translateX(-1920px);
+    }
+
+    input:nth-child(5):checked~.img-box {
+      transform: translateX(-2540px);
+    }
+
+    .rb-box {
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(-50%);
+    }
+
+    .rb-box .rb {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: #fff;
+      border-radius: 50%;
+      background-color: rgba(255, 0, 0, 0.4);
+      cursor: pointer;
+    }
+    .rb-box .rb:hover{
+      background-color: #f40;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <input type="radio" name="imgs" id="rb1" hidden>
+    <input type="radio" name="imgs" id="rb2" hidden>
+    <input type="radio" name="imgs" id="rb3" hidden>
+    <input type="radio" name="imgs" id="rb4" hidden>
+    <input type="radio" name="imgs" id="rb5" hidden>
+    <div class="img-box">
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+    </div>
+    <div class="rb-box">
+      <label for="rb1" class="rb">1</label>
+      <label for="rb2" class="rb">2</label>
+      <label for="rb3" class="rb">3</label>
+      <label for="rb4" class="rb">4</label>
+      <label for="rb5" class="rb">5</label>
+    </div>
+  </div>
+
+</body>
+
+</html>
