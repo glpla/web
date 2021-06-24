@@ -16,6 +16,7 @@
   </script>
   <link rel="stylesheet" href="css/reset.css">
   <style>
+<<<<<<< HEAD
     html {
       font-size: 62.5%;
     }
@@ -26,6 +27,15 @@
 
     li {
       font-size: 1.6rem;
+=======
+    html,
+    body {
+      font-size: 62.5%;
+    }
+
+    p {
+      font-size: 1.4rem;
+>>>>>>> a947e8f7070cbb4a7056390b4f8d1aed08adabc3
     }
 
     .box {
@@ -40,19 +50,19 @@
       background-size: cover;
     }
 
-    @media (max-width:1024px) {
+    @media (max-width:1023px) {
       .box {
         grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    @media (max-width:768px) {
+    @media (max-width:766px) {
       .box {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width:375px) {
+    @media (max-width:374px) {
       .box {
         grid-template-columns: repeat(1, 1fr);
       }
@@ -154,6 +164,9 @@
     <div class="grid-item"></div>
   </div>
   <div class="box">
+    <p>rem em</p>
+    <p>vw vh</p>
+    <p>media query</p>
     <div class="img"></div>
     <div class="img"></div>
     <div class="img"></div>

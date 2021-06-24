@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll To Top</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <style>
+    .box {
+      height: 400vh;
+      background-color: #eee1ec;
+    }
+
+    .back {
+      position: fixed;
+      right: 2rem;
+      bottom: 2rem;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      background-color: #f40;
+      opacity: 1;
+    }
+
+    .fade {
+      animation: fade .4s forwards;
+    }
+
+    @keyframes fade {
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <div class="back"></div>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('.box');
+    window.onload = function () {
+      let back = document.querySelector('.back')
+      window.addEventListener('scroll', (e) => {
+        if (window.pageYOffset > 200) {
+          back.style.display = "block";
+        } else {
+          back.style.display = "none";
+        }
+
+      })
+      back.addEventListener('click', (e) => {
+        console.log('hi');
+        back.classList.add('fade')
+      })
+    }
+  </script>
+</body>
+
+</html>
